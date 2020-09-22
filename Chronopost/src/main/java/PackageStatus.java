@@ -11,6 +11,10 @@ public class PackageStatus {
     private String location;
     private State state;
 
+    public PackageStatus() {
+
+    }
+
     public PackageStatus(Coordinate coordinate, Timestamp date, String location, State state) {
         this.coordinate = coordinate;
         this.date = date;

@@ -9,6 +9,7 @@ public class Package {
     private List<PackageStatus> packageStatusList;
 
     public Package() {
+        
     }
 
     public Package(float weight, float value, String origin, String destination) {
