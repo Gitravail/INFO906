@@ -1,0 +1,2 @@
+# INFO906
+Cours Info906 USMB
