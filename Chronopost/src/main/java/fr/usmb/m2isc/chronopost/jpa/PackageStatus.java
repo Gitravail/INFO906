@@ -1,3 +1,7 @@
+package fr.usmb.m2isc.chronopost.jpa;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import java.sql.Timestamp;
 
 public class PackageStatus {
@@ -7,7 +11,10 @@ public class PackageStatus {
     }
 
     private Coordinate coordinate;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Timestamp date;
+
     private String location;
     private State state;
 
