@@ -26,3 +26,6 @@
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <!-- Content here -->
