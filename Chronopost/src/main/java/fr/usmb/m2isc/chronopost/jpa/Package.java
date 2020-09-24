@@ -1,12 +1,21 @@
+package fr.usmb.m2isc.chronopost.jpa;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 
+@Entity
 public class Package {
+
+    @Id @GeneratedValue
     private long id;
+
     private float weight;
     private float value;
     private String origin;
     private String destination;
-    private List<PackageStatus> packageStatusList;
+    // private List<PackageStatus> packageStatusList;
 
     public Package() {
         
@@ -21,10 +30,6 @@ public class Package {
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public float getWeight() {
@@ -59,6 +64,7 @@ public class Package {
         this.destination = destination;
     }
 
+    /*
     public List<PackageStatus> getPackageStatusList() {
         return packageStatusList;
     }
@@ -66,4 +72,5 @@ public class Package {
     public void setPackageStatusList(List<PackageStatus> packageStatusList) {
         this.packageStatusList = packageStatusList;
     }
+    */
 }
