@@ -5,6 +5,16 @@
          version="4.0">
 
     <servlet>
+        <servlet-name>HomepageServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.HomepageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HomepageServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>AddPackageServlet</servlet-name>
         <servlet-class>fr.usmb.m2isc.chronopost.servlets.AddPackageServlet</servlet-class>
     </servlet>
@@ -15,13 +25,23 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>HomepageServlet</servlet-name>
-        <servlet-class>fr.usmb.m2isc.chronopost.servlets.HomepageServlet</servlet-class>
+        <servlet-name>PackageProgressServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.PackageProgressServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>HomepageServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>PackageProgressServlet</servlet-name>
+        <url-pattern>/progress</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MonitorPackageServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.MonitorPackageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MonitorPackageServlet</servlet-name>
+        <url-pattern>/monitor</url-pattern>
     </servlet-mapping>
 
 </web-app>
