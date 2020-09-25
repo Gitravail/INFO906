@@ -1,5 +1,8 @@
 package fr.usmb.m2isc.chronopost.servlets;
 
+import fr.usmb.m2isc.chronopost.ejb.PackageEJB;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +12,9 @@ import java.io.IOException;
 
 @WebServlet(name = "MonitorPackageServlet")
 public class MonitorPackageServlet extends HttpServlet {
+
+    @EJB
+    private PackageEJB ejb;
 
     public MonitorPackageServlet() {
 
