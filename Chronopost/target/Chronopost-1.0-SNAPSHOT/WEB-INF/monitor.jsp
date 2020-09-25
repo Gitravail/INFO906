@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
 <h1>Monitor</h1>
-<form method="post">
+<form method="get">
     <div class="form-group">
         <label for="id">Package's ID</label>
         <input type="number" class="form-control" id="id" placeholder="Enter package ID">
