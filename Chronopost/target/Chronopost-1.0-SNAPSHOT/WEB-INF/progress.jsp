@@ -15,4 +15,19 @@
     </div>
     <button type="submit" class="btn btn-primary">Display progress</button>
 </form>
+<div id="map" class="map"></div>
+<script type="text/javascript">
+    var map = new ol.Map({
+        target: 'map',
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        view: new ol.View({
+            center: ol.proj.fromLonLat([37.41, 8.82]),
+            zoom: 4
+        })
+    });
+</script>
 <%@include file="footer.jsp"%>
