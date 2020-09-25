@@ -20,6 +20,48 @@
         <label for="value">Value</label>
         <input type="number" step="0.01" class="form-control" id="value" placeholder="Enter package value">
     </div>
+    <div class="form-group">
+        <label for="origin">Origin</label>
+        <div id="origin" class="form-group row">
+            <label for="originName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="originName" placeholder="Enter origin name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="originLat" class="col-sm-2 col-form-label">Latitude</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="originLat" placeholder="Enter origin latitude">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="originLong" class="col-sm-2 col-form-label">Longitude</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="originLong" placeholder="Enter origin longitude">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="destination">Destination</label>
+        <div id="destination" class="form-group row">
+            <label for="destinationName" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="destinationName" placeholder="Enter destination name">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="destinationLat" class="col-sm-2 col-form-label">Latitude</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="destinationLat" placeholder="Enter destination latitude">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="destinationLong" class="col-sm-2 col-form-label">Longitude</label>
+            <div class="col-sm-10">
+                <input type="string" class="form-control" id="destinationLong" placeholder="Enter destination longitude">
+            </div>
+        </div>
+    </div>
     <button type="submit" class="btn btn-primary">Add</button>
 </form>
 <%@include file="footer.jsp"%>
