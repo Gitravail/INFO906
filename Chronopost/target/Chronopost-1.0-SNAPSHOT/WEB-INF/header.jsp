@@ -20,7 +20,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="add">Add</a>
+                <a class="nav-item nav-link" href="add">Add</a>
                 <a class="nav-item nav-link" href="progress">Progress</a>
                 <a class="nav-item nav-link" href="monitor">Monitor</a>
             </div>
