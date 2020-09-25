@@ -1,21 +1,21 @@
 package fr.usmb.m2isc.chronopost.jpa;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Package {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private long id;
 
     private float weight;
     private float value;
     private String origin;
     private String destination;
-    // private List<PackageStatus> packageStatusList;
+    @OneToMany
+    private List<PackageStatus> packageStatusList;
 
     public Package() {
         
@@ -64,7 +64,6 @@ public class Package {
         this.destination = destination;
     }
 
-    /*
     public List<PackageStatus> getPackageStatusList() {
         return packageStatusList;
     }
@@ -72,5 +71,4 @@ public class Package {
     public void setPackageStatusList(List<PackageStatus> packageStatusList) {
         this.packageStatusList = packageStatusList;
     }
-    */
 }

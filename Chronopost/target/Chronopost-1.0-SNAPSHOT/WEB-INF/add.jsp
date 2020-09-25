@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="header.jsp"%>
 <h1>
-    ${ id } ${ timestamp }
+    ${ id } ${ timestamp } ${ coordinate }
 </h1>
 
 <form method="post">
