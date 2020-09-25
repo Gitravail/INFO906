@@ -1,9 +1,17 @@
 package fr.usmb.m2isc.chronopost.jpa;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.regex.*;
 
+@Entity
 public class Coordinate {
-    
+
+    @Id
+    @GeneratedValue
+    private long id;
+
     private double latitude;
     private double longitude;
 
@@ -14,6 +22,14 @@ public class Coordinate {
     public Coordinate(String latitude, String longitude) {
         this.latitude = this.toDecimal(latitude);
         this.longitude = this.toDecimal(longitude);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public double getLatitude() {

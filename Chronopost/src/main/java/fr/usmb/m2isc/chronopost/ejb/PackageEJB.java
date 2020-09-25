@@ -8,7 +8,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.sql.Timestamp;
+import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,11 +38,14 @@ public class PackageEJB {
      */
     public Package addPackage(float weight, float value, String origin, String destination, String latitude, String longitude, String location) {
         Package p = new Package(weight, value, origin, destination);
+        Coordinate coordinate = new Coordinate(latitude, longitude);
+        em.persist(coordinate);
+        PackageStatus ps = new PackageStatus(coordinate, new Date(System.currentTimeMillis()), location, PackageStatus.State.REGISTRATION);
+        em.persist(ps);
+        List<PackageStatus> packageStatusList = new ArrayList<>();
+        packageStatusList.add(ps);
+        p.setPackageStatusList(packageStatusList);
         em.persist(p);
-        // PackageStatus ps = new PackageStatus(new Coordinate(latitude, longitude), new Timestamp(System.currentTimeMillis()), location, PackageStatus.State.REGISTRATION);
-        // List<PackageStatus> packageStatusList = new ArrayList<>();
-        // packageStatusList.add(ps);
-        // p.setPackageStatusList(packageStatusList);
         return p;
     }
 }
