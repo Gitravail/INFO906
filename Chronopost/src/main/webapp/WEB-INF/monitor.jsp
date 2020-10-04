@@ -5,9 +5,8 @@
   Time: 11:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@include file="header.jsp"%>
 <h1>Monitor</h1>
+<p><c:out value="Bonjour !" /></p>
 <form method="get">
     <div class="form-group">
         <label for="id">Package's ID</label>
