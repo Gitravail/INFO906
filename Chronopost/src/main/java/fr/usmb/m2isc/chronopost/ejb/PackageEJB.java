@@ -33,14 +33,13 @@ public class PackageEJB {
      * @param destination package's destination
      * @param latitude package's latitude
      * @param longitude package's longitude
-     * @param location package's location
      * @return Added package
      */
-    public Package addPackage(float weight, float value, String origin, String destination, String latitude, String longitude, String location) {
+    public Package addPackage(float weight, float value, String origin, String latitude, String longitude, String destination) {
         Package p = new Package(weight, value, origin, destination);
         Coordinate coordinate = new Coordinate(latitude, longitude);
         em.persist(coordinate);
-        PackageStatus ps = new PackageStatus(coordinate, new Date(System.currentTimeMillis()), location, PackageStatus.State.REGISTRATION);
+        PackageStatus ps = new PackageStatus(coordinate, new Date(System.currentTimeMillis()), origin, PackageStatus.State.REGISTRATION);
         em.persist(ps);
         List<PackageStatus> packageStatusList = new ArrayList<>();
         packageStatusList.add(ps);
