@@ -13,6 +13,28 @@
     </div>
     <button type="submit" class="btn btn-primary">Monitor package</button>
 </form>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+                <p>Some text in the modal.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 <c:if test="${package.id != null}">
 <table class="table">
     <thead>
@@ -22,6 +44,7 @@
         <th scope="col">Longitude</th>
         <th scope="col">Date</th>
         <th scope="col">State</th>
+        <th scope="col"></th>
     </tr>
     </thead>
     <tbody>
@@ -33,6 +56,11 @@
             <td>${colis.coordinate.longitude}</td>
             <td>${colis.date}</td>
             <td>${colis.state}</td>
+            <td>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                    Edit
+                </button>
+            </td>
         </tr>
         </c:forEach>
 
@@ -42,15 +70,15 @@
 <form method="post">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="string" class="form-control" id="name" name="name" placeholder="Enter step name">
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter step name">
     </div>
     <div class="form-group">
         <label for="lat">Latitude</label>
-        <input type="number" step="0.01" class="form-control" id="lat" name="lat" placeholder="Enter package value">
+        <input type="text" class="form-control" id="lat" name="lat" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="long">Longitude</label>
-        <input type="string" class="form-control" id="long" name="long" placeholder="Enter package value">
+        <input type="text" class="form-control" id="long" name="long" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="state">State</label>
@@ -65,4 +93,6 @@
     <button type="submit" class="btn btn-primary">Add</button>
 </form>
 </c:if>
+
+
 <%@include file="footer.jsp"%>
