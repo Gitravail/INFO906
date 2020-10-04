@@ -14,7 +14,7 @@ public class Package {
     private float value;
     private String origin;
     private String destination;
-    @OneToMany
+    @OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
     private List<PackageStatus> packageStatusList;
 
     public Package() {

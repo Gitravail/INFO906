@@ -22,6 +22,7 @@ public class MonitorPackageServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String test = request.getParameter("id");
         long id = Long.parseLong(request.getParameter("id"));
         // call ejb to find corresponding package
         Package p = ejb.findById(id);
