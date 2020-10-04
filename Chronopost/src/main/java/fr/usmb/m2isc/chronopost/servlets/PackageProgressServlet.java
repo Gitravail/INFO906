@@ -1,6 +1,7 @@
 package fr.usmb.m2isc.chronopost.servlets;
 
 import fr.usmb.m2isc.chronopost.ejb.PackageEJB;
+import fr.usmb.m2isc.chronopost.jpa.Package;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
@@ -21,7 +22,13 @@ public class PackageProgressServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        long id = Long.parseLong(request.getParameter("id"));
+        // call ejb to find corresponding package
+        Package p = ejb.findById(id);
+        // Add to the request
+        request.setAttribute("package", p);
+        // Send to jsp
+        request.getRequestDispatcher("/WEB-INF/progress.jsp").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
