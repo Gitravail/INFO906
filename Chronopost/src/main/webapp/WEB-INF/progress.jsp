@@ -9,7 +9,7 @@
 <form method="post">
     <div class="form-group">
         <label for="id">Package's ID</label>
-        <input type="number" class="form-control" id="id" placeholder="Enter package ID">
+        <input type="number" class="form-control" id="id" name="id" placeholder="Enter package ID">
     </div>
     <button type="submit" class="btn btn-primary">Display progress</button>
 </form>
