@@ -48,4 +48,9 @@ public class PackageEJB {
         em.persist(p);
         return p;
     }
+
+    public Package findById(long id) {
+        Package p = em.find(Package.class, id);
+        return p;
+    }
 }
