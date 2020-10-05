@@ -47,18 +47,6 @@
                 <input type="text" class="form-control" id="destinationName" name="destinationName" placeholder="Enter destination name">
             </div>
         </div>
-        <div class="form-group row">
-            <label for="destinationLat" class="col-sm-2 col-form-label">Latitude</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="destinationLat" name="destinationLat" placeholder="Enter destination latitude">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="destinationLong" class="col-sm-2 col-form-label">Longitude</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="destinationLong" name="destinationLong" placeholder="Enter destination longitude">
-            </div>
-        </div>
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
 </form>

@@ -24,7 +24,13 @@ public class AddPackageServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Package p = ejb.addPackage((float) 50.20, (float) 21.1, "Origin", "Destination", "21.5458", "65.122", "Here");
+        float weight = Float.parseFloat(request.getParameter("weight"));
+        float value = Float.parseFloat(request.getParameter("value"));
+        String originName = request.getParameter("originName");
+        String originLat = request.getParameter("originLat");
+        String originLong = request.getParameter("originLong");
+        String destinationName = request.getParameter("destinationName");
+        Package p = ejb.addPackage(weight, value, originName, originLat, originLong, destinationName);
         List<PackageStatus> packageStatusList = p.getPackageStatusList();
         PackageStatus first = packageStatusList.get(0);
         request.setAttribute("coordinate", first.getCoordinate().getLatitude() + ", " + first.getCoordinate().getLongitude());
