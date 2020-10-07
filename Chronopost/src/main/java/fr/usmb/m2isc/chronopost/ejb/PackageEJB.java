@@ -58,4 +58,14 @@ public class PackageEJB {
         TypedQuery<Long> tq = em.createQuery("SELECT p.id FROM Package p ORDER BY p.id ASC", Long.class);
         return tq.getResultList();
     }
+
+    public Package addStep(long id, PackageStatus packageStatus) {
+        Package p = this.findById(id);
+        p.addStatus(packageStatus);
+        return p;
+    }
+
+    public PackageStatus findPackageStatus(long packageStatusId) {
+        return em.find(PackageStatus.class, packageStatusId);
+    }
 }

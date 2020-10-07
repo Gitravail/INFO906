@@ -68,6 +68,8 @@ public class Package {
         return packageStatusList;
     }
 
+    public void addStatus(PackageStatus ps) { packageStatusList.add(ps); }
+
     public void setPackageStatusList(List<PackageStatus> packageStatusList) {
         this.packageStatusList = packageStatusList;
     }
