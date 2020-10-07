@@ -12,7 +12,14 @@
         <label for="id">Package ID</label>
         <select class="form-control" id="id" name="id">
             <c:forEach var="id" items="${ids}">
-                <option>${id}</option>
+                <c:choose>
+                    <c:when test="${package.id == id}">
+                        <option selected="selected">${id}</option>
+                    </c:when>
+                    <c:otherwise>
+                        <option>${id}</option>
+                    </c:otherwise>
+                </c:choose>
             </c:forEach>
         </select>
     </div>

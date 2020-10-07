@@ -12,7 +12,14 @@
         <label for="id">Package ID</label>
         <select class="form-control" id="id" name="id">
             <c:forEach var="id" items="${ids}">
-                <option>${id}</option>
+                <c:choose>
+                    <c:when test="${package.id == id}">
+                        <option selected="selected">${id}</option>
+                    </c:when>
+                    <c:otherwise>
+                        <option>${id}</option>
+                    </c:otherwise>
+                </c:choose>
             </c:forEach>
         </select>
     </div>
@@ -95,9 +102,14 @@
             <td>${colis.date}</td>
             <td>${colis.state}</td>
             <td>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Edit
-                </button>
+                <form method="post">
+                    <input type="number" hidden class="form-control" id="hiddenPackageID" name="hiddenPackageID" value="${package.id}">
+                    <input type="number" hidden class="form-control" id="hiddenID" name="hiddenID" value="${colis.id}">
+                    <button type="submit" class="btn btn-primary">
+                        Edit
+                    </button>
+                </form>
+
             </td>
         </tr>
         </c:forEach>
@@ -108,15 +120,15 @@
 <form method="post">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" name="name" placeholder="Enter step name">
+        <input type="text" class="form-control" required id="name" name="name" placeholder="Enter step name">
     </div>
     <div class="form-group">
         <label for="lat">Latitude</label>
-        <input type="text" class="form-control" id="lat" name="lat" placeholder="Enter package value">
+        <input type="text" class="form-control" required id="lat" name="lat" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="long">Longitude</label>
-        <input type="text" class="form-control" id="long" name="long" placeholder="Enter package value">
+        <input type="text" class="form-control" required id="long" name="long" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="state">State</label>
