@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "PackageProgressServlet")
 public class PackageProgressServlet extends HttpServlet {
@@ -32,6 +33,8 @@ public class PackageProgressServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Long> ids = ejb.listPackageIds();
+        request.setAttribute("ids", ids);
         this.getServletContext().getRequestDispatcher("/WEB-INF/progress.jsp").forward(request, response);
     }
 }

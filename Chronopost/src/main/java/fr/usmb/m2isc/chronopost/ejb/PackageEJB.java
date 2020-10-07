@@ -8,6 +8,7 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,5 +52,10 @@ public class PackageEJB {
     public Package findById(long id) {
         Package p = em.find(Package.class, id);
         return p;
+    }
+
+    public List<Long> listPackageIds() {
+        TypedQuery<Long> tq = em.createQuery("SELECT p.id FROM Package p ORDER BY p.id ASC", Long.class);
+        return tq.getResultList();
     }
 }

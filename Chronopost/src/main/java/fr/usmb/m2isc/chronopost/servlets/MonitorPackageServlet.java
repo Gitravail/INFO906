@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "MonitorPackageServlet")
 public class MonitorPackageServlet extends HttpServlet {
@@ -32,6 +33,8 @@ public class MonitorPackageServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Long> ids = ejb.listPackageIds();
+        request.setAttribute("ids", ids);
         this.getServletContext().getRequestDispatcher("/WEB-INF/monitor.jsp").forward(request, response);
     }
 }
