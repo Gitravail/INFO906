@@ -8,8 +8,12 @@
 <h1>Monitor</h1>
 <form method="post">
     <div class="form-group">
-        <label for="id">Package's ID</label>
-        <input type="number" class="form-control" id="id" name="id" placeholder="Enter package ID">
+        <label for="id">Package ID</label>
+        <select class="form-control" id="id" name="id">
+            <c:forEach var="id" items="${ids}">
+                <option>${id}</option>
+            </c:forEach>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Monitor package</button>
 </form>

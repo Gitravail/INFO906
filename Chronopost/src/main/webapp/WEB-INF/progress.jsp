@@ -5,39 +5,44 @@
   Time: 11:07
   To change this template use File | Settings | File Templates.
 --%>
+
 <h1>Progress</h1>
 <form method="post">
     <div class="form-group">
-        <label for="id">Package's ID</label>
-        <input type="number" class="form-control" id="id" name="id" placeholder="Enter package ID">
+        <label for="id">Package ID</label>
+        <select class="form-control" id="id" name="id">
+            <c:forEach var="id" items="${ids}">
+                <option>${id}</option>
+            </c:forEach>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Display progress</button>
 </form>
 <c:if test="${package.id != null}">
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Latitude</th>
-        <th scope="col">Longitude</th>
-        <th scope="col">Date</th>
-        <th scope="col">State</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    <c:forEach var="colis" items="${package.packageStatusList}" varStatus="status" >
+    <table class="table">
+        <thead>
         <tr>
-            <th>${colis.location}</th>
-            <td>${colis.coordinate.latitude}</td>
-            <td>${colis.coordinate.longitude}</td>
-            <td>${colis.date}</td>
-            <td>${colis.state}</td>
+            <th scope="col">Name</th>
+            <th scope="col">Latitude</th>
+            <th scope="col">Longitude</th>
+            <th scope="col">Date</th>
+            <th scope="col">State</th>
         </tr>
-    </c:forEach>
+        </thead>
+        <tbody>
 
-    </tbody>
-</table>
+        <c:forEach var="colis" items="${package.packageStatusList}" varStatus="status">
+            <tr>
+                <th>${colis.location}</th>
+                <td>${colis.coordinate.latitude}</td>
+                <td>${colis.coordinate.longitude}</td>
+                <td>${colis.date}</td>
+                <td>${colis.state}</td>
+            </tr>
+        </c:forEach>
+
+        </tbody>
+    </table>
 </c:if>
 
-<%@include file="footer.jsp"%>
+<%@include file="footer.jsp" %>
