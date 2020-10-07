@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <h1>Monitor</h1>
+
 <form method="post">
     <div class="form-group">
         <label for="id">Package's ID</label>
