@@ -6,8 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <h1>Edit</h1>
-${packageId}
-${packageStatus}
 <form method="post">
     <input hidden type="number" class="form-control" id="editPackageID" name="packageId" value="${packageId}">
     <input hidden type="number" class="form-control" id="editID" name="packageStatusId" value="${packageStatus.id}">
@@ -30,11 +28,11 @@ ${packageStatus}
     <div class="form-group">
         <label for="changeState">State</label>
         <select class="form-control" id="changeState" name="changeState">
-            <option selected="${packageStatus.state == 'REGISTRATION'}">REGISTRATION</option>
-            <option selected="${packageStatus.state == 'PENDING'}">PENDING</option>
-            <option selected="${packageStatus.state == 'TRANSITING'}">TRANSITING</option>
-            <option selected="${packageStatus.state == 'BLOCKED'}">BLOCKED</option>
-            <option selected="${packageStatus.state == 'DELIVERED'}">DELIVERED</option>
+            <option <c:if test="${packageStatus.state == 'REGISTRATION'}">selected</c:if>>REGISTRATION</option>
+            <option <c:if test="${packageStatus.state == 'PENDING'}">selected</c:if>>PENDING</option>
+            <option <c:if test="${packageStatus.state == 'TRANSITING'}">selected</c:if>>TRANSITING</option>
+            <option <c:if test="${packageStatus.state == 'BLOCKED'}">selected</c:if>>BLOCKED</option>
+            <option <c:if test="${packageStatus.state == 'DELIVERED'}">selected</c:if>>DELIVERED</option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Update</button>
