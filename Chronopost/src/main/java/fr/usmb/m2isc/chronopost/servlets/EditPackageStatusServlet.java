@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "EditPackageStatusServlet")
+@WebServlet(name = "/EditPackageStatusServlet")
 public class EditPackageStatusServlet extends HttpServlet {
 
     @EJB

@@ -51,7 +51,7 @@
 
     <servlet-mapping>
         <servlet-name>EditPackageStatusServlet</servlet-name>
-        <url-pattern>/editStep</url-pattern>
+        <url-pattern>/editStep.jsp</url-pattern>
     </servlet-mapping>
 
     <jsp-config>

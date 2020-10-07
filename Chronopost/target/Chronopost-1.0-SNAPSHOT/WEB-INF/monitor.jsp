@@ -94,17 +94,17 @@
     </thead>
     <tbody>
 
-        <c:forEach var="colis" items="${package.packageStatusList}" varStatus="status" >
+        <c:forEach var="packageStatus" items="${package.packageStatusList}" varStatus="status" >
         <tr>
-            <th>${colis.location}</th>
-            <td>${colis.coordinate.latitude}</td>
-            <td>${colis.coordinate.longitude}</td>
-            <td>${colis.date}</td>
-            <td>${colis.state}</td>
+            <th>${packageStatus.location}</th>
+            <td>${packageStatus.coordinate.latitude}</td>
+            <td>${packageStatus.coordinate.longitude}</td>
+            <td>${packageStatus.date}</td>
+            <td>${packageStatus.state}</td>
             <td>
-                <form method="post">
-                    <input type="number" hidden class="form-control" id="hiddenPackageID" name="hiddenPackageID" value="${package.id}">
-                    <input type="number" hidden class="form-control" id="hiddenID" name="hiddenID" value="${colis.id}">
+                <form method="get" action="EditPackageStatusServlet">
+                    <input type="number" hidden class="form-control" id="hiddenPackageID" name="packageId" value="${package.id}">
+                    <input type="number" hidden class="form-control" id="hiddenID" name="packageStatusId" value="${packageStatus.id}">
                     <button type="submit" class="btn btn-primary">
                         Edit
                     </button>
