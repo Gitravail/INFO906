@@ -67,7 +67,7 @@
 
     <c:forEach var="item" items="${package.packageStatusList}" varStatus="loop">
         <c:if test="${loop.last}">
-            <c:if test="${item.state == 'DELIVERED'}">
+            <c:if test="${item.state != 'DELIVERED'}">
                 <form method="post" action="AddPackageStatusServlet">
                     <div class="form-group">
                         <label for="name">Name</label>
