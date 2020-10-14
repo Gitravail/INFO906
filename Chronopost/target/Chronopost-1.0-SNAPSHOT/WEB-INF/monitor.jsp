@@ -63,18 +63,18 @@
     </tbody>
 </table>
 
-<form method="post">
+<form method="post" action="AddPackageStatusServlet">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" class="form-control" required id="name" name="name" placeholder="Enter step name">
     </div>
     <div class="form-group">
         <label for="lat">Latitude</label>
-        <input type="text" class="form-control" required id="lat" name="lat" placeholder="Enter package value">
+        <input type="text" class="form-control" required id="latitude" name="latitude" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="long">Longitude</label>
-        <input type="text" class="form-control" required id="long" name="long" placeholder="Enter package value">
+        <input type="text" class="form-control" required id="longitude" name="longitude" placeholder="Enter package value">
     </div>
     <div class="form-group">
         <label for="state">State</label>
@@ -86,6 +86,7 @@
             <option>DELIVERED</option>
         </select>
     </div>
+    <input type="number" hidden id="packageId" name="packageId" value="${package.id}">
     <button type="submit" class="btn btn-primary">Add</button>
 </form>
 </c:if>
