@@ -10,24 +10,24 @@
     <input hidden type="number" class="form-control" id="editPackageID" name="packageId" value="${packageId}">
     <input hidden type="number" class="form-control" id="editID" name="packageStatusId" value="${packageStatus.id}">
     <div class="form-group">
-        <label for="changeName">Name</label>
-        <input type="text" class="form-control" id="changeName" name="changeName" value="${packageStatus.location}">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="${packageStatus.location}">
     </div>
     <div class="form-group">
-        <label for="changeLat">Latitude</label>
-        <input type="text" class="form-control" id="changeLat" name="changeLat" value="${packageStatus.coordinate.latitude}">
+        <label for="latitude">Latitude</label>
+        <input type="text" class="form-control" id="latitude" name="latitude" value="${packageStatus.coordinate.latitude}">
     </div>
     <div class="form-group">
-        <label for="changeLong">Longitude</label>
-        <input type="text" class="form-control" id="changeLong" name="changeLong" value="${packageStatus.coordinate.longitude}">
+        <label for="longitude">Longitude</label>
+        <input type="text" class="form-control" id="longitude" name="longitude" value="${packageStatus.coordinate.longitude}">
     </div>
     <div class="form-group">
-        <label for="changeState">State</label>
-        <select class="form-control" id="changeState" name="changeState">
+        <label for="state">State</label>
+        <select class="form-control" id="state" name="state">
             <option <c:if test="${packageStatus.state == 'REGISTRATION'}">selected</c:if>>REGISTRATION</option>
             <option <c:if test="${packageStatus.state == 'PENDING'}">selected</c:if>>PENDING</option>
             <option <c:if test="${packageStatus.state == 'TRANSITING'}">selected</c:if>>TRANSITING</option>
-            <option <c:if test="${packageStatus.state == 'BLOCKED'}">selected</c:if>>BLOCKED</option>
+            <option <c:if test="${packageStatus.state == 'BLOCKED'}">selecSted</c:if>>BLOCKED</option>
             <option <c:if test="${packageStatus.state == 'DELIVERED'}">selected</c:if>>DELIVERED</option>
         </select>
     </div>
