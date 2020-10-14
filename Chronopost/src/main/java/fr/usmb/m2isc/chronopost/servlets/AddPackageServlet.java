@@ -34,7 +34,7 @@ public class AddPackageServlet extends HttpServlet {
         List<PackageStatus> packageStatusList = p.getPackageStatusList();
         PackageStatus first = packageStatusList.get(0);
         request.setAttribute("coordinate", first.getCoordinate().getLatitude() + ", " + first.getCoordinate().getLongitude());
-        request.setAttribute("timestamp", first.getDate());
+        request.setAttribute("date", first.getDate());
         request.setAttribute("id", p.getId());
         this.getServletContext().getRequestDispatcher("/WEB-INF/add.jsp").forward(request, response);
     }

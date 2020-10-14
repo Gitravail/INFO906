@@ -1,20 +1,39 @@
 package fr.usmb.m2isc.chronopost.jpa;
 
 import javax.persistence.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
 public class PackageStatus {
 
+    public static State ParseState(String state) {
+        switch (state) {
+            case "REGISTRATION":
+                return State.REGISTRATION;
+            case "PENDING":
+                return State.PENDING;
+            case "TRANSITING":
+                return State.TRANSITING;
+            case "BLOCKED":
+                return State.BLOCKED;
+            case "DELIVERED":
+                return State.DELIVERED;
+            default:
+                return State.UNKNOWN;
+        }
+    }
+
     public enum State {
-        REGISTRATION, PENDING, TRANSITING, BLOCKED, DELIVERED
+        REGISTRATION, PENDING, TRANSITING, BLOCKED, DELIVERED, UNKNOWN;
     }
 
     @Id
     @GeneratedValue
     private long id;
 
-    @OneToOne
+    @OneToOne(cascade=CascadeType.ALL)
     private Coordinate coordinate;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -24,12 +43,12 @@ public class PackageStatus {
     private State state;
 
     public PackageStatus() {
-
+        this.date = new Date();
     }
 
-    public PackageStatus(Coordinate coordinate, Date date, String location, State state) {
+    public PackageStatus(Coordinate coordinate, String location, State state) {
+        this.date = new Date();
         this.coordinate = coordinate;
-        this.date = date;
         this.location = location;
         this.state = state;
     }
@@ -50,8 +69,9 @@ public class PackageStatus {
         this.coordinate = coordinate;
     }
 
-    public Date getDate() {
-        return date;
+    public String getDate() {
+        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy 'at' HH:mm:ss");
+        return formater.format(date);
     }
 
     public void setDate(Date date) {

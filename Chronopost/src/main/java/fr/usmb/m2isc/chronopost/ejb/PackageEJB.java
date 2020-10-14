@@ -40,7 +40,7 @@ public class PackageEJB {
         Package p = new Package(weight, value, origin, destination);
         Coordinate coordinate = new Coordinate(latitude, longitude);
         em.persist(coordinate);
-        PackageStatus ps = new PackageStatus(coordinate, new Date(System.currentTimeMillis()), origin, PackageStatus.State.REGISTRATION);
+        PackageStatus ps = new PackageStatus(coordinate, origin, PackageStatus.State.REGISTRATION);
         em.persist(ps);
         List<PackageStatus> packageStatusList = new ArrayList<>();
         packageStatusList.add(ps);

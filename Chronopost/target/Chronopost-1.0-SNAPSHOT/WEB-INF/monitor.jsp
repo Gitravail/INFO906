@@ -7,10 +7,10 @@
 --%>
 <h1>Monitor</h1>
 
-<form method="post">
+<form method="post" action="MonitorPackageServlet">
     <div class="form-group">
-        <label for="id">Package ID</label>
-        <select class="form-control" id="id" name="id">
+        <label for="packageId">Package ID</label>
+        <select class="form-control" id="idList" name="packageId">
             <c:forEach var="id" items="${ids}">
                 <c:choose>
                     <c:when test="${package.id == id}">
@@ -69,11 +69,11 @@
         <input type="text" class="form-control" required id="name" name="name" placeholder="Enter step name">
     </div>
     <div class="form-group">
-        <label for="lat">Latitude</label>
+        <label for="latitude">Latitude</label>
         <input type="text" class="form-control" required id="latitude" name="latitude" placeholder="Enter package value">
     </div>
     <div class="form-group">
-        <label for="long">Longitude</label>
+        <label for="longitude">Longitude</label>
         <input type="text" class="form-control" required id="longitude" name="longitude" placeholder="Enter package value">
     </div>
     <div class="form-group">
@@ -81,7 +81,7 @@
         <select class="form-control" id="state" name="state">
             <option>REGISTRATION</option>
             <option>PENDING</option>
-            <option>TRANSITING</option>
+            <option selected>TRANSITING</option>
             <option>BLOCKED</option>
             <option>DELIVERED</option>
         </select>
