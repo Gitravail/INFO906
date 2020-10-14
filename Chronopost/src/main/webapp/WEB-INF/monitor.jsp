@@ -7,10 +7,10 @@
 --%>
 <h1>Monitor</h1>
 
-<form method="post">
+<form method="post" action="MonitorPackageServlet">
     <div class="form-group">
-        <label for="id">Package ID</label>
-        <select class="form-control" id="id" name="id">
+        <label for="packageId">Package ID</label>
+        <select class="form-control" id="idList" name="packageId">
             <c:forEach var="id" items="${ids}">
                 <c:choose>
                     <c:when test="${package.id == id}">
@@ -89,7 +89,7 @@
                         <select class="form-control" id="state" name="state">
                             <option>REGISTRATION</option>
                             <option>PENDING</option>
-                            <option>TRANSITING</option>
+                            <option selected>TRANSITING</option>
                             <option>BLOCKED</option>
                             <option>DELIVERED</option>
                         </select>

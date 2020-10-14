@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <h1>
-    ${ id } ${ timestamp } ${ coordinate }
+    ${ id } ${ date } ${ coordinate }
 </h1>
 
 <form method="post">
