@@ -44,16 +44,6 @@
         <url-pattern>/monitor</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>EditPackageStatusServlet</servlet-name>
-        <servlet-class>fr.usmb.m2isc.chronopost.servlets.EditPackageStatusServlet</servlet-class>
-    </servlet>
-
-    <servlet-mapping>
-        <servlet-name>EditPackageStatusServlet</servlet-name>
-        <url-pattern>/editStep.jsp</url-pattern>
-    </servlet-mapping>
-
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>
