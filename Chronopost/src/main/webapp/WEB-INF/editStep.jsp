@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <h1>Edit</h1>
-<form method="post">
+<form method="post" action="EditPackageStatusServlet">
     <input hidden type="number" class="form-control" id="editPackageID" name="packageId" value="${packageId}">
     <input hidden type="number" class="form-control" id="editID" name="packageStatusId" value="${packageStatus.id}">
     <div class="form-group">
@@ -20,10 +20,6 @@
     <div class="form-group">
         <label for="changeLong">Longitude</label>
         <input type="text" class="form-control" id="changeLong" name="changeLong" value="${packageStatus.coordinate.longitude}">
-    </div>
-    <div class="form-group">
-        <label for="changeDate">Date</label>
-        <input type="text" class="form-control" id="changeDate" name="changeDate" value="${packageStatus.date}">
     </div>
     <div class="form-group">
         <label for="changeState">State</label>
