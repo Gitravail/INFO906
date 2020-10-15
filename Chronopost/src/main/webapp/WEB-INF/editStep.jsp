@@ -24,6 +24,7 @@
     <div class="form-group">
         <label for="state">State</label>
         <select class="form-control" id="state" name="state">
+            <!-- Select the row according to the package status state -->
             <option <c:if test="${packageStatus.state == 'REGISTRATION'}">selected</c:if>>REGISTRATION</option>
             <option <c:if test="${packageStatus.state == 'PENDING'}">selected</c:if>>PENDING</option>
             <option <c:if test="${packageStatus.state == 'TRANSITING'}">selected</c:if>>TRANSITING</option>

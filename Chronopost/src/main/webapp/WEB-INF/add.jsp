@@ -5,9 +5,15 @@
   Time: 16:44
   To change this template use File | Settings | File Templates.
 --%>
-<h1>
-    ${ id } ${ date } ${ coordinate }
-</h1>
+
+<!-- If a package have just been added -->
+<c:if test="${ not empty package }">
+    <div class="alert alert-info" role="alert">
+        The package have successfully been added<br />
+        Destination : <strong>${ package.destination }</strong><br />
+        ID : <strong>${ package.id }</strong>
+    </div>
+</c:if>
 
 <form method="post">
     <div class="form-group">

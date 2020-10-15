@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!-- Mapping of the pages to their servlet -->
     <servlet>
         <servlet-name>HomepageServlet</servlet-name>
         <servlet-class>fr.usmb.m2isc.chronopost.servlets.HomepageServlet</servlet-class>
@@ -44,6 +45,7 @@
         <url-pattern>/monitor</url-pattern>
     </servlet-mapping>
 
+    <!-- Contains the header of every files -->
     <jsp-config>
         <jsp-property-group>
             <url-pattern>*.jsp</url-pattern>

@@ -1,14 +1,21 @@
 package fr.usmb.m2isc.chronopost.jpa;
 
 import javax.persistence.*;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * JPA object for a package status, a step in a package delivery process
+ */
 @Entity
 public class PackageStatus {
 
-    public static State ParseState(String state) {
+    /**
+     * Parse a state from a string to the actual enum type
+     * @param state the state as a string
+     * @return State
+     */
+    public static State parseState(String state) {
         switch (state) {
             case "REGISTRATION":
                 return State.REGISTRATION;
@@ -25,22 +32,30 @@ public class PackageStatus {
         }
     }
 
+    /* All the different possible states */
     public enum State {
         REGISTRATION, PENDING, TRANSITING, BLOCKED, DELIVERED, UNKNOWN;
     }
 
+    /**
+     * Unique identifier of the object, if it's null then it will be auto generated when adding it to the database
+     */
     @Id
     @GeneratedValue
     private long id;
 
+    /* The status coordinates are also stored in the database in another table so they are part of the cascade */
     @OneToOne(cascade=CascadeType.ALL)
     private Coordinate coordinate;
 
+    /* The date of the step with a temporal format */
     @Temporal(TemporalType.TIMESTAMP)
     private Date date;
 
     private String location;
     private State state;
+
+    /* Constructors */
 
     public PackageStatus() {
         this.date = new Date();
@@ -52,6 +67,8 @@ public class PackageStatus {
         this.location = location;
         this.state = state;
     }
+
+    /* Getters and setters */
 
     public long getId() {
         return id;
@@ -70,8 +87,9 @@ public class PackageStatus {
     }
 
     public String getDate() {
-        SimpleDateFormat formater = new SimpleDateFormat("dd/MM/yyyy 'at' HH:mm:ss");
-        return formater.format(date);
+        /* Date reformat when using it in the displays */
+        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy 'at' HH:mm:ss");
+        return formatter.format(date);
     }
 
     public void setDate(Date date) {

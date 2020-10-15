@@ -7,10 +7,13 @@
 --%>
 
 <h1>Progress</h1>
+<!-- Combobox for the package selection -->
 <form method="post">
     <div class="form-group">
-        <label for="id">Package ID</label>
-        <select class="form-control" id="id" name="id">
+        <label for="packageId">Package ID</label>
+        <select class="form-control" id="packageId" name="packageId">
+            <!-- Loop through the ids and add them as a selection item -->
+            <!-- Select the item if the currently displayed package corresponding to the current id -->
             <c:forEach var="id" items="${ids}">
                 <c:choose>
                     <c:when test="${package.id == id}">
@@ -25,6 +28,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Display progress</button>
 </form>
+
+<!-- If a package have been chosen for the display of information -->
+<!-- Generate the table of package status -->
 <c:if test="${package.id != null}">
     <table class="table">
         <thead>

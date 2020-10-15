@@ -7,8 +7,8 @@
 --%>
 <h1>Homepage</h1>
 <br />
-
-<p>
+<!-- Random name display -->
+<h3>
     Hello ${ !empty name ? name : names[rnd]} !
-</p>
+</h3>
 <%@include file="footer.jsp"%>

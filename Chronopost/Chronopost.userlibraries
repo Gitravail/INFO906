@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eclipse-userlibraries>
+  <library name="EJB-3.2.2">
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javax.ejb-api-3.2.2.jar" />
+  </library>
+  <library name="Hibernate 5.4.11-5.4.11">
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/istack-commons-runtime-3.0.7.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/classmate-1.5.1.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/hibernate-commons-annotations-5.1.0.Final.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/FastInfoset-1.2.15.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/dom4j-2.1.1.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/antlr-2.7.7.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javax.activation-api-1.2.0.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javax.persistence-api-2.2.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/jandex-2.1.1.Final.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/jaxb-api-2.3.1.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/jboss-logging-3.3.2.Final.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javassist-3.24.0-GA.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/stax-ex-1.8.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/txw2-2.3.1.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/jaxb-runtime-2.3.1.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/byte-buddy-1.10.7.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/hibernate-core-5.4.11.Final.jar" />
+  </library>
+  <library name="Java EE 6-Java EE 6">
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javax.jms.jar" />
+    <archive path="D:/Documents/Fac/M2/Info906/TPS/INFO906/Chronopost/lib/javax.resource.jar" />
+  </library>
+  <library name="Maven: javax:javaee-web-api:8.0.1">
+    <archive path="C:/Users/rapht/.m2/repository/javax/javaee-web-api/8.0.1/javaee-web-api-8.0.1.jar" />
+  </library>
+  <library name="Maven: org.apiguardian:apiguardian-api:1.1.0">
+    <archive path="C:/Users/rapht/.m2/repository/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-api:5.6.2">
+    <archive path="C:/Users/rapht/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.6.2/junit-jupiter-api-5.6.2.jar" />
+  </library>
+  <library name="Maven: org.junit.jupiter:junit-jupiter-engine:5.6.2">
+    <archive path="C:/Users/rapht/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.6.2/junit-jupiter-engine-5.6.2.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-commons:1.6.2">
+    <archive path="C:/Users/rapht/.m2/repository/org/junit/platform/junit-platform-commons/1.6.2/junit-platform-commons-1.6.2.jar" />
+  </library>
+  <library name="Maven: org.junit.platform:junit-platform-engine:1.6.2">
+    <archive path="C:/Users/rapht/.m2/repository/org/junit/platform/junit-platform-engine/1.6.2/junit-platform-engine-1.6.2.jar" />
+  </library>
+  <library name="Maven: org.opentest4j:opentest4j:1.2.0">
+    <archive path="C:/Users/rapht/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar" />
+  </library>
+  <library name="javax.servlet:jstl:1.2">
+    <archive path="C:/Users/rapht/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar" />
+  </library>
+</eclipse-userlibraries>
+

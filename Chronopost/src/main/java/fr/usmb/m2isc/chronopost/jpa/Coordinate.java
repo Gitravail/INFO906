@@ -5,9 +5,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.regex.*;
 
+/**
+ * JPA entity to store coordinates in the database
+ */
 @Entity
 public class Coordinate {
 
+    /**
+     * Unique identifier of the object, if it's null then it will be auto generated when adding it to the database
+     */
     @Id
     @GeneratedValue
     private long id;
@@ -15,6 +21,9 @@ public class Coordinate {
     private double latitude;
     private double longitude;
 
+    /* Constructors */
+
+    // Mandatory constructor for JPA objects
     public Coordinate() {
 
     }
@@ -23,6 +32,8 @@ public class Coordinate {
         this.latitude = this.toDecimal(latitude);
         this.longitude = this.toDecimal(longitude);
     }
+
+    /* Getters and setters */
 
     public long getId() {
         return id;
@@ -36,18 +47,23 @@ public class Coordinate {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public void setLatitude(String latitude) {
+        this.latitude = toDecimal(latitude);
     }
 
     public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public void setLongitude(String longitude) {
+        this.longitude = toDecimal(longitude);
     }
 
+    /**
+     * Convert a DMS coordinate into a decimal coordinate
+     * @param degree the dms coordinate
+     * @return String decimal formatted coordinates
+     */
     private double toDecimal(String degree) {
         String regex = "^([0-8]?[0-9]|90)°(\\s[0-5]?[0-9]')?(\\s[0-5]?[0-9](,[0-9])?\")?$";
         if (Pattern.matches(regex, degree)) {

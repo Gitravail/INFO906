@@ -9,24 +9,31 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.Date;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Package's EJB that will serve as an interface between the JPA objects and the Database objects
+ * The EJB will be used by the Servlets and provide the requested records from the DB
+ * This EJB is Stateless since we don't need instances variables so it will be less costly for the server
+ *
+ * Also the EJB is local since we use it on only one server
+ */
 @Stateless
 @LocalBean
 public class PackageEJB {
+
+    // Interface used for the JPA/Database mapping
     @PersistenceContext
     private EntityManager em;
 
     /**
      * Mandatory constructor without parameters
      */
-    public PackageEJB() {
-    }
+    public PackageEJB() { }
 
     /**
-     * Add a new package
+     * Add a new package, instantiating a package will also instantiate a first package status step
      *
      * @param weight package's weight
      * @param value package's value
@@ -49,22 +56,57 @@ public class PackageEJB {
         return p;
     }
 
+    /**
+     * Find a package according to its Id
+     * @param id id of the package we are looking for
+     * @return Package
+     */
     public Package findById(long id) {
-        Package p = em.find(Package.class, id);
-        return p;
+        return em.find(Package.class, id);
     }
 
+    /**
+     * List all the available Package's ids, used to fill in the combobox when selecting a Package to monitor
+     * @return long[]
+     */
     public List<Long> listPackageIds() {
         TypedQuery<Long> tq = em.createQuery("SELECT p.id FROM Package p ORDER BY p.id ASC", Long.class);
         return tq.getResultList();
     }
 
-    public Package addStep(long id, PackageStatus packageStatus) {
+    /**
+     * Add a new package status at the end of the package status list
+     * @param id package's identifier
+     * @param packageStatus the package status to be added
+     * @return Package
+     */
+    public Package addPackageStatus(long id, PackageStatus packageStatus) {
         Package p = this.findById(id);
-        p.addStatus(packageStatus);
+        p.addPackageStatus(packageStatus);
         return p;
     }
 
+    /**
+     * Update a package status of a package
+     * @param id package's identifier
+     * @param packageStatusId package status id of the edited status
+     * @param location possibly edited location
+     * @param latitude possibly edited latitude
+     * @param longitude possibly edited longitude
+     * @param state possibly edited state
+     * @return Package
+     */
+    public Package editPackageStatus(long id, long packageStatusId, String location, String latitude, String longitude, String state) {
+        Package p = this.findById(id);
+        p.editPackageStatus(packageStatusId, location, latitude, longitude, state);
+        return p;
+    }
+
+    /**
+     * Find a package status according to its Id
+     * @param packageStatusId the package status identifier
+     * @return PackageStatus
+     */
     public PackageStatus findPackageStatus(long packageStatusId) {
         return em.find(PackageStatus.class, packageStatusId);
     }

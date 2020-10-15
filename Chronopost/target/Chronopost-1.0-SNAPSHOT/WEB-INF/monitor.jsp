@@ -7,10 +7,13 @@
 --%>
 <h1>Monitor</h1>
 
-<form method="post" action="MonitorPackageServlet">
+<!-- Combobox for the package selection -->
+<form method="post">
     <div class="form-group">
         <label for="packageId">Package ID</label>
         <select class="form-control" id="idList" name="packageId">
+            <!-- Loop through the ids and add them as a selection item -->
+            <!-- Select the item if the currently displayed package corresponding to the current id -->
             <c:forEach var="id" items="${ids}">
                 <c:choose>
                     <c:when test="${package.id == id}">
@@ -26,6 +29,9 @@
     <button type="submit" class="btn btn-primary">Monitor package</button>
 </form>
 
+<!-- If a package have been chosen for the display of information -->
+<!-- Generate the table of package status -->
+<!-- Make the package status editable by adding a form and some hidden field to make the mapping of the items -->
 <c:if test="${package.id != null}">
     <table class="table">
         <thead>
@@ -65,6 +71,9 @@
         </tbody>
     </table>
 
+    <!-- Loop until the last package status of the current package -->
+    <!-- If the package have not been delivered yet -->
+    <!-- Display the form to add a new status -->
     <c:forEach var="item" items="${package.packageStatusList}" varStatus="loop">
         <c:if test="${loop.last}">
             <c:if test="${item.state != 'DELIVERED'}">
@@ -75,12 +84,12 @@
                                placeholder="Enter step name">
                     </div>
                     <div class="form-group">
-                        <label for="lat">Latitude</label>
+                        <label for="latitude">Latitude</label>
                         <input type="text" class="form-control" required id="latitude" name="latitude"
                                placeholder="Enter package value">
                     </div>
                     <div class="form-group">
-                        <label for="long">Longitude</label>
+                        <label for="longitude">Longitude</label>
                         <input type="text" class="form-control" required id="longitude" name="longitude"
                                placeholder="Enter package value">
                     </div>
