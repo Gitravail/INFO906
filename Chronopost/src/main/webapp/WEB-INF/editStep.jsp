@@ -28,7 +28,7 @@
             <option <c:if test="${packageStatus.state == 'REGISTRATION'}">selected</c:if>>REGISTRATION</option>
             <option <c:if test="${packageStatus.state == 'PENDING'}">selected</c:if>>PENDING</option>
             <option <c:if test="${packageStatus.state == 'TRANSITING'}">selected</c:if>>TRANSITING</option>
-            <option <c:if test="${packageStatus.state == 'BLOCKED'}">selecSted</c:if>>BLOCKED</option>
+            <option <c:if test="${packageStatus.state == 'BLOCKED'}">selected</c:if>>BLOCKED</option>
             <option <c:if test="${packageStatus.state == 'DELIVERED'}">selected</c:if>>DELIVERED</option>
         </select>
     </div>
