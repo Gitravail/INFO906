@@ -32,5 +32,5 @@ Une fois l'identifiant sélectionné, l'utilisateur va avoir la possibilité d'a
 
 Voici l'architecture global de l'application:
 
-![Diagramme de classe]("./images/class_diagram.png")
+![Diagramme de classe](./images/class_diagram.png)
 
