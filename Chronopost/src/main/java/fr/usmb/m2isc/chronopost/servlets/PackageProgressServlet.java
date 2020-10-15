@@ -18,6 +18,7 @@ import java.util.List;
 @WebServlet(name = "PackageProgressServlet")
 public class PackageProgressServlet extends HttpServlet {
 
+    /* Inject the ejb reference */
     @EJB
     private PackageEJB ejb;
 
