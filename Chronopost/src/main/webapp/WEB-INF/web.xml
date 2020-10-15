@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <!-- Mapping of the pages to their servlet -->
+    <servlet>
+        <servlet-name>HomepageServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.HomepageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HomepageServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddPackageServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.AddPackageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddPackageServlet</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>PackageProgressServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.PackageProgressServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PackageProgressServlet</servlet-name>
+        <url-pattern>/progress</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MonitorPackageServlet</servlet-name>
+        <servlet-class>fr.usmb.m2isc.chronopost.servlets.MonitorPackageServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MonitorPackageServlet</servlet-name>
+        <url-pattern>/monitor</url-pattern>
+    </servlet-mapping>
+
+    <!-- Contains the header of every files -->
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>*.jsp</url-pattern>
+            <include-prelude>/WEB-INF/taglibs.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+
+</web-app>
